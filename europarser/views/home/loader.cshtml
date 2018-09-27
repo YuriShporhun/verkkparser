@@ -1,0 +1,59 @@
+﻿@{Layout = "_basicLayout";}
+
+@section scripts {
+    <script src="~/lib/dropzone/dist/dropzone.js"></script>
+    <script src="~/js/loader.js"></script>
+}
+
+@section styles {
+    <link href="~/css/loader.css" rel="stylesheet"/>
+}
+
+<main>
+    <div id="select-action-container">
+        <table id="select-action-table">
+            <tr>
+                <td>
+                    <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                </td>
+                <td>
+                    <select name="selectedAction" id="select-action">
+                        <option disabled value="default" selected>Выберите тип обновления</option>
+                        <option value="marketSPB">Выгружать в маркет в СПБ</option>
+                        <option value="marketMSK">Выгружать в маркет в Москве</option>
+                        <option value="availability">Наличие у поставщика</option>
+                        <option value="archive">В архиве</option>
+                        <option value="price">Цена в евро</option>
+                        <option value="addPrice">Навесить цену</option>
+                    </select>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-circle-o-left fa-2x fa-fw"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="excel-loader">
+        <div id="preview-template">
+            <div class="dz-preview dz-file-preview">
+                <div class="dz-details">
+                    <div class="dz-filename"></div>
+                    <div class="dz-size"></div>
+                    <img data-dz-thumbnail />
+                </div>
+                <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+                <div class="dz-success-mark"><span></span></div>
+                <div class="dz-error-mark"><span></span></div>
+                <div class="dz-error-message"><span data-dz-errormessage></span></div>
+            </div>
+        </div>
+        <div id="dropzone-message" class="dz-message" data-dz-message><span>ФАЙЛ КИДАТЬ СЮДА</span></div>
+    </div>
+
+    <div id="status-container">
+        Текущий статус: <span id="current-status"></span><br />
+        <br />
+        Использовать навес цены только и только в том случае если цены нет, в противном случае использовать обновление цены.
+    </div>
+</main>

@@ -1,0 +1,16 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "v4.1.0",
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "jQuery": "3.3.1",
+    "moment": "2.22.1",
+    "d3": "v5.1.0",
+    "dropzone": "v5.1.1"
+  },
+  "resolutions": {
+    "d3": "v5.1.0",
+    "moment": "2.22.1"
+  }
+}

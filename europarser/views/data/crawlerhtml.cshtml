@@ -1,0 +1,51 @@
+﻿@{Layout = "_basicLayout";}
+@using europarser.models
+@model CrawlerModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Данные кроулера</title>
+    <link href="~/css/datatable.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jumbotron-fluid">
+        @using (Html.BeginForm())
+        {
+            @Html.DropDownListFor(model => model.filters.SLoaded, Model.filters.Loaded)
+            @Html.DropDownListFor(model => model.filters.SCategory, Model.filters.Categories)
+            @Html.DropDownListFor(model => model.filters.SDiscount, Model.filters.Discount)
+            <button type="submit">Обновить</button>
+        }
+    </div>
+    <table class="table table-striped table-dark table-sm table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Артикул</th>
+                <th>Категория</th>
+                <th>Наименование</th>
+                <th>Загружен на сайт</th>
+                <th>URL</th>
+                <th>Цена в евро</th>
+                <th>Акция</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.items)
+            {
+                <tr>
+                    <td>@item.VendorCode</td>
+                    <td>@item.Cathegory</td>
+                    <td>@item.Name</td>
+                    <td>@item.Uploaded</td>
+                    <td>@item.ULR.AbsoluteUri</td>
+                    <td>@item.PriceEuro</td>
+                    <td>@item.Discount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

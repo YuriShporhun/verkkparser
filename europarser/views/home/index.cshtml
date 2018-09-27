@@ -1,0 +1,123 @@
+﻿@{Layout = "_basicLayout";}
+
+@section scripts {
+    <script src="~/js/index.js"></script>
+}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <h4 class="col-12">Текущие задачи</h4>
+            <div class="col-12">
+                <table class="task-table table table-light table-bordered table-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Задача</th>
+                            <th>Статус</th>
+                            <th>Процесс выполнения</th>
+                            <th>Результат HTML</th>
+                            <th>Результат CSV</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            Загрузчик
+                        </td>
+                        <td id="loader-status-cell">
+                            Не запущен
+                        </td>
+                        <td id="loader-progress-cell">
+
+                        </td>
+                        <td id="loader-html-cell">
+                            Не готов
+                        </td>
+                        <td>
+                            Не готов
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Парсер
+                        </td>
+                        <td id="parser-status-cell">
+                            Не запущен
+                        </td>
+                        <td id="parser-progress-cell">
+
+                        </td>
+                        <td>
+                            Не готов
+                        </td>
+                        <td id="parser-excel-cell">
+                            Не готов
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Кроулер
+                        </td>
+                        <td id="crawler-status-cell">
+                            Не запущен
+                        </td>
+                        <td id="crawler-progress-cell">
+
+                        </td>
+                        <td id="crawler-html-cell">
+                            Не готов
+                        </td>
+                        <td id="crawler-excel-cell">
+                            Не готов
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <h4 class="col-12">Управление</h4>
+
+            <div class="container col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Загрузчик</h5>
+                    </div>
+                </div>
+                <div class="card-body border">
+                    <h5 class="card-title">Управление</h5>
+                    <button id="start-loader-button" class="btn btn-outline-primary btn-sm">Запустить</button>
+                </div>
+            </div>
+
+            <div class="container col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Парсер</h5>
+                    </div>
+                </div>
+                <div class="card-body border">
+                    <h5 class="card-title">Управление</h5>
+                    <button id="start-parser-button" class="btn btn-outline-primary btn-sm">Запустить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="container col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Кроулер</h5>
+                    </div>
+                </div>
+                <div class="card-body border">
+                    <h5 class="card-title">Управление</h5>
+                    <button id="start-crawler-button" class="btn btn-outline-primary btn-sm">Запустить</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</main>
